@@ -1,0 +1,68 @@
+import 'dart:async';
+
+import 'package:simple_auth_comparison_flutter/services/auth_service.dart';
+import 'package:simple_auth_comparison_flutter/services/firebase_auth_service.dart';
+import 'package:simple_auth_comparison_flutter/services/mock_auth_service.dart';
+import 'package:flutter/foundation.dart';
+
+enum AuthServiceType { firebase, mock }
+
+class AuthServiceFacade implements AuthService {
+  AuthServiceFacade() {
+    _setup();
+  }
+  final FirebaseAuthService _firebaseAuthService = FirebaseAuthService();
+  final MockAuthService _mockAuthService = MockAuthService();
+
+  // Value notifier used to switch between [FirebaseAuthService] and [MockAuthService]
+  ValueNotifier<AuthServiceType> authServiceTypeNotifier = ValueNotifier<AuthServiceType>(AuthServiceType.firebase);
+  AuthServiceType get authServiceType => authServiceTypeNotifier.value;
+  AuthService get authService => authServiceType == AuthServiceType.firebase ? _firebaseAuthService : _mockAuthService;
+
+  StreamSubscription<User> _firebaseAuthSubscription;
+  StreamSubscription<User> _mockAuthSubscription;
+
+  void _setup() {
+    // Observable<User>.merge was considered here, but we need more fine grained control to ensure
+    // that only events from the currently active service are processed
+    _firebaseAuthSubscription = _firebaseAuthService.onAuthStateChanged.listen((User user) {
+      if (authServiceType == AuthServiceType.firebase) {
+        _onAuthStateChangedController.add(user);
+      }
+    }, onError: (dynamic error) {
+      if (authServiceType == AuthServiceType.firebase) {
+        _onAuthStateChangedController.addError(error);
+      }
+    });
+    _mockAuthSubscription = _mockAuthService.onAuthStateChanged.listen((User user) {
+      if (authServiceType == AuthServiceType.mock) {
+        _onAuthStateChangedController.add(user);
+      }
+    }, onError: (dynamic error) {
+      if (authServiceType == AuthServiceType.mock) {
+        _onAuthStateChangedController.addError(error);
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _firebaseAuthSubscription?.cancel();
+    _mockAuthSubscription?.cancel();
+    _onAuthStateChangedController?.close();
+    _mockAuthService.dispose();
+  }
+
+  final StreamController<User> _onAuthStateChangedController = StreamController<User>();
+  @override
+  Stream<User> get onAuthStateChanged => _onAuthStateChangedController.stream;
+
+  @override
+  Future<User> currentUser() => authService.currentUser();
+
+  @override
+  Future<User> signInAnonymously() => authService.signInAnonymously();
+
+  @override
+  Future<void> signOut() => authService.signOut();
+}
