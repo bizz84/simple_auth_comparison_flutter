@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:simple_auth_comparison_flutter/common_widgets/segmented_control.dart';
 import 'package:simple_auth_comparison_flutter/services/auth_service.dart';
 import 'package:simple_auth_comparison_flutter/services/auth_service_facade.dart';
-import 'package:simple_auth_comparison_flutter/sign_in_page_navigation.dart';
+import 'package:simple_auth_comparison_flutter/sign_in/sign_in_page_navigation.dart';
 
 class MenuSwitcher extends StatelessWidget {
   const MenuSwitcher({Key key, this.tabs, this.selectedTab, this.onSelected}) : super(key: key);
