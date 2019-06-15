@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:simple_auth_comparison_flutter/sign_in/menu_switcher.dart';
 import 'package:simple_auth_comparison_flutter/sign_in/option.dart';
-import 'package:simple_auth_comparison_flutter/sign_in/tabs/sign_in_page_bloc.dart';
-import 'package:simple_auth_comparison_flutter/sign_in/tabs/sign_in_page_set_state.dart';
-import 'package:simple_auth_comparison_flutter/sign_in/tabs/sign_in_page_value_notifier.dart';
-import 'package:simple_auth_comparison_flutter/sign_in/tabs/sign_in_page_vanilla.dart';
+import 'package:simple_auth_comparison_flutter/sign_in/pages/sign_in_page_bloc.dart';
+import 'package:simple_auth_comparison_flutter/sign_in/pages/sign_in_page_set_state.dart';
+import 'package:simple_auth_comparison_flutter/sign_in/pages/sign_in_page_value_notifier.dart';
+import 'package:simple_auth_comparison_flutter/sign_in/pages/sign_in_page_vanilla.dart';
 
 class SignInPageNavigation extends StatelessWidget {
   const SignInPageNavigation({Key key, this.option}) : super(key: key);
