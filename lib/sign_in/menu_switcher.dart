@@ -54,7 +54,7 @@ class MenuSwitcher extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: Text('State Management', style: textStyle),
           ),
-          ..._buildTabs(),
+          ..._buildTabs(context),
         ],
       ),
     );
@@ -78,15 +78,18 @@ class MenuSwitcher extends StatelessWidget {
     );
   }
 
-  List<Widget> _buildTabs() => tabs.keys.map(_buildTile).toList();
+  List<Widget> _buildTabs(BuildContext context) => tabs.keys.map((tab) => _buildTile(context, tab)).toList();
 
-  Widget _buildTile(NavigationTab tab) {
+  Widget _buildTile(BuildContext context, NavigationTab tab) {
     final data = tabs[tab];
     return ListTile(
       leading: Icon(data.iconData),
       title: Text(data.title, style: textStyle),
       trailing: selectedTab == tab ? Icon(Icons.check) : null,
-      onTap: () => onSelected(tab),
+      onTap: () {
+        Navigator.of(context).pop();
+        onSelected(tab);
+      },
     );
   }
 }
