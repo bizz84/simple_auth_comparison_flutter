@@ -14,19 +14,22 @@ This sample app shows different approaches to managing state in Flutter:
 
 Flutter offers [various state management approaches](https://flutter.dev/docs/development/data-and-backend/state-mgmt/options#bloc--rx).
 
-This sample project takes a simple use case, and shows how to implement it in various ways.
+This project implements a simple use case with different techniques. A [Drawer](https://api.flutter.dev/flutter/material/Drawer-class.html) menu can be used to switch between them.
 
 This serves both as an **introduction** and a **comparison** of different approaches.
 
 ### Curretly supported
 
+- [x] vanilla (basic implementation without loading state)
 - [x] setState
 - [x] BLoC with Provider
 - [x] ValueNotifier with Provider
 
+<!--
 ### YouTube video walk-through
 
 [![Flutter State Management: setState, BLoC, ValueNotifier, ChangeNotifier + Provider](media/firebase-auth-banner-youtube.png)](https://youtu.be/TODO)
+-->
 
 ## Reference
 
