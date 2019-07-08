@@ -8,6 +8,10 @@ Use case:
 
 - **Setting a loading state while an authentication request is in progress**
 
+### Preview
+
+![](media/preview.gif)
+
 YouTube video walk-through here: 
 
 [![Flutter State Management: setState, BLoC, ValueNotifier, ChangeNotifier + Provider](media/firebase-auth-banner-youtube.png)](https://youtu.be/TODO)
