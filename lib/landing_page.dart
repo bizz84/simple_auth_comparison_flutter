@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_auth_comparison_flutter/home_page.dart';
@@ -21,7 +20,8 @@ class LandingPage extends StatelessWidget {
             User user = snapshot.data;
             if (user == null) {
               return Consumer<ValueNotifier<Option>>(
-                  builder: (_, ValueNotifier<Option> option, __) => SignInPageNavigation(option: option),
+                builder: (_, ValueNotifier<Option> option, __) =>
+                    SignInPageNavigation(option: option),
               );
             }
             return HomePage();

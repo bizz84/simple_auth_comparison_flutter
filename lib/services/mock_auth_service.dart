@@ -8,7 +8,7 @@ import 'package:simple_auth_comparison_flutter/services/auth_service.dart';
 class MockAuthService implements AuthService {
   MockAuthService({
     this.startupTime = const Duration(milliseconds: 500),
-    this.responseTime = const Duration(seconds: 2),
+    this.responseTime = const Duration(seconds: 4),
   }) {
     Future<void>.delayed(responseTime).then((_) {
       _add(null);
@@ -19,7 +19,8 @@ class MockAuthService implements AuthService {
 
   User _currentUser;
 
-  final StreamController<User> _onAuthStateChangedController = StreamController<User>();
+  final StreamController<User> _onAuthStateChangedController =
+      StreamController<User>();
   @override
   Stream<User> get onAuthStateChanged => _onAuthStateChangedController.stream;
 
