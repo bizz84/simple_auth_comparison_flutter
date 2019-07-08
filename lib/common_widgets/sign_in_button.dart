@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class SignInButton extends CustomRaisedButton {
@@ -11,15 +10,15 @@ class SignInButton extends CustomRaisedButton {
     double height = 50.0,
     bool loading = false,
   }) : super(
-    key: key,
-    child: Text(text, style: TextStyle(color: textColor, fontSize: 20.0)),
-    color: color,
-    textColor: textColor,
-    height: height,
-    borderRadius: 8,
-    onPressed: onPressed,
-    loading: loading,
-  );
+          key: key,
+          child: Text(text, style: TextStyle(color: textColor, fontSize: 20.0)),
+          color: color,
+          textColor: textColor,
+          height: height,
+          borderRadius: 8,
+          onPressed: onPressed,
+          loading: loading,
+        );
 }
 
 @immutable
@@ -75,4 +74,3 @@ class CustomRaisedButton extends StatelessWidget {
     );
   }
 }
-
