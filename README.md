@@ -18,7 +18,7 @@ This project implements a simple use case with different techniques. A [Drawer](
 
 This serves both as an **introduction** and a **comparison** of different approaches.
 
-### Curretly supported
+### Currently supported
 
 - [x] vanilla (basic implementation without loading state)
 - [x] setState
