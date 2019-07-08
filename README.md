@@ -1,23 +1,21 @@
-## TODO
+## State Management Comparison: Authentication Flow
 
-- Rename to simple_auth_flow_comparison_flutter
-- Add ChangeNotifier
-- Use Drawer navigator
-- Add mock auth
+This is a sample app showing different approaches to managing state in Flutter:
 
-# simple_auth_flow_flutter
+### [`setState`](https://flutter.dev/docs/development/data-and-backend/state-mgmt/options#setstate) vs [`BLoC`](https://flutter.dev/docs/development/data-and-backend/state-mgmt/options#bloc--rx) vs [`ValueNotifier`](https://api.flutter.dev/flutter/foundation/ValueNotifier-class.html)/[`ChangeNotifier`](https://api.flutter.dev/flutter/foundation/ChangeNotifier-class.html) with [Provider](https://pub.dev/packages/provider)
 
-A simple authentication flow
+Use case: 
 
-## Getting Started
+- **Setting a loading state while an authentication request is in progress**
 
-This project is a starting point for a Flutter application.
+YouTube video walk-through here: 
 
-A few resources to get you started if this is your first Flutter project:
+[![Flutter State Management: setState, BLoC, ValueNotifier, ChangeNotifier + Provider](media/firebase-auth-banner-youtube.png)](https://youtu.be/TODO)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+## Reference
+
+- [Flutter Docs: List of state management approaches](https://flutter.dev/docs/development/data-and-backend/state-mgmt/options)
+
+
+## [License: MIT](LICENSE.md)
