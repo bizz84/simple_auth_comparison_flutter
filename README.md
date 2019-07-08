@@ -42,8 +42,16 @@ To use this project with Firebase authentication, some configuration steps are r
 - On iOS, use `com.codingwithflutter.simpleAuthComparisonFlutter` as the bundle ID
 - then, download and copy `GoogleService-Info.plist` into `iOS/Runner`, and add it to the Runner target in Xcode
 
-## Reference
+## References
 
 - [Flutter Docs: List of state management approaches](https://flutter.dev/docs/development/data-and-backend/state-mgmt/options)
+
+----
+
+All the state management techniques used in this project are explained in great detail, and implemented step-by-step in my Flutter & Firebase Udemy course.
+
+This is available for early access at this link (discount code included):
+
+- [Flutter & Firebase: Build a Complete App for iOS & Android](https://www.udemy.com/flutter-firebase-build-a-complete-app-for-ios-android/?couponCode=DART15&password=codingwithflutter)
 
 ## [License: MIT](LICENSE.md)
