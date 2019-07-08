@@ -29,7 +29,6 @@ class SignInPageNavigation extends StatelessWidget {
         onSelected: _onSelectOption,
       ),
       body: _buildContent(context),
-      //bottomNavigationBar: _buildBottomNavigationBar(),
     );
   }
 
