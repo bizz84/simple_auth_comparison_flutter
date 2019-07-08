@@ -31,6 +31,17 @@ This serves both as an **introduction** and a **comparison** of different approa
 [![Flutter State Management: setState, BLoC, ValueNotifier, ChangeNotifier + Provider](media/firebase-auth-banner-youtube.png)](https://youtu.be/TODO)
 -->
 
+## Running the project with Firebase
+
+To use this project with Firebase authentication, some configuration steps are required.
+
+- Create a new project with the Firebase console.
+- Add iOS and Android apps in the Firebase project settings.
+- On Android, use `com.codingwithflutter.simple_auth_comparison_flutter` as the package name.
+- then, download and copy `google-services.json` into `android/app`
+- On iOS, use `com.codingwithflutter.simpleAuthComparisonFlutter` as the bundle ID
+- then, download and copy `GoogleService-Info.plist` into `iOS/Runner`, and add it to the Runner target in Xcode
+
 ## Reference
 
 - [Flutter Docs: List of state management approaches](https://flutter.dev/docs/development/data-and-backend/state-mgmt/options)
