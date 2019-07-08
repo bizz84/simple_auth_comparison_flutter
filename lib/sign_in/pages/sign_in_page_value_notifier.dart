@@ -13,7 +13,8 @@ class SignInPageValueNotifier extends StatelessWidget {
     return ChangeNotifierProvider<ValueNotifier<bool>>(
       builder: (_) => ValueNotifier<bool>(false),
       child: Consumer<ValueNotifier<bool>>(
-        builder: (_, ValueNotifier<bool> isLoading, __) => SignInPageValueNotifier(
+        builder: (_, ValueNotifier<bool> isLoading, __) =>
+            SignInPageValueNotifier(
               loading: isLoading,
             ),
       ),
@@ -41,7 +42,7 @@ class SignInPageValueNotifier extends StatelessWidget {
       child: SignInButton(
         text: 'Sign in',
         loading: loading.value,
-        onPressed: () => _signInAnonymously(context),
+        onPressed: loading.value ? null : () => _signInAnonymously(context),
       ),
     );
   }

@@ -50,18 +50,17 @@ class SignInPageBloc extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<bool>(
-      stream: bloc.loadingStream,
-      initialData: false,
-      builder: (context, snapshot) {
-        return Center(
-          child: SignInButton(
-            text: 'Sign in',
-            loading: snapshot.data,
-            onPressed: () => _signInAnonymously(context),
-          ),
-        );
-      }
-    );
+        stream: bloc.loadingStream,
+        initialData: false,
+        builder: (context, snapshot) {
+          final isLoading = snapshot.data;
+          return Center(
+            child: SignInButton(
+              text: 'Sign in',
+              loading: isLoading,
+              onPressed: isLoading ? null : () => _signInAnonymously(context),
+            ),
+          );
+        });
   }
 }
-
