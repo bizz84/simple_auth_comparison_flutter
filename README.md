@@ -6,6 +6,12 @@ This sample app shows different approaches to managing state in Flutter:
 
 **Use case: Setting a loading state while an authentication request is in progress**
 
+### YouTube video walkthrough
+
+[![Flutter State Management: setState, BLoC, ValueNotifier, Provider](media/state-management-comparison-youtube-banner.png)](https://youtu.be/7eaV9gSnaXw)
+
+Also published as an article [here](https://medium.com/coding-with-flutter/flutter-state-management-setstate-bloc-valuenotifier-provider-2c11022d871b).
+
 ### Preview
 
 ![](media/preview.gif)
