@@ -8,11 +8,10 @@ import 'package:simple_auth_comparison_flutter/sign_in/sign_in_page_navigation.d
 class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Used to keep track of navigation tab across sign-in events
+    // Used to keep track of the selected option across sign-in events
     final authService = Provider.of<AuthService>(context);
     return ChangeNotifierProvider<ValueNotifier<Option>>(
       builder: (_) => ValueNotifier<Option>(Option.vanilla),
-      // onAuthStateChanged
       child: StreamBuilder<User>(
         stream: authService.onAuthStateChanged,
         builder: (context, snapshot) {
