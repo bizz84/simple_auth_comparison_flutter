@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 enum Option {
@@ -7,6 +5,7 @@ enum Option {
   setState,
   bloc,
   valueNotifier,
+  rxdart,
 }
 
 class OptionData {
@@ -20,4 +19,5 @@ Map<Option, OptionData> optionsData = {
   Option.setState: OptionData(Icons.adjust, 'setState'),
   Option.bloc: OptionData(Icons.clear_all, 'bloc'),
   Option.valueNotifier: OptionData(Icons.autorenew, 'valueNotifier'),
+  Option.rxdart: OptionData(Icons.autorenew, 'RxDart'),
 };

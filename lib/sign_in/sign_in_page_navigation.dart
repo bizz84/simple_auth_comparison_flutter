@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:simple_auth_comparison_flutter/sign_in/menu_switcher.dart';
 import 'package:simple_auth_comparison_flutter/sign_in/option.dart';
 import 'package:simple_auth_comparison_flutter/sign_in/pages/sign_in_page_bloc.dart';
+import 'package:simple_auth_comparison_flutter/sign_in/pages/sign_in_page_rxdart.dart';
 import 'package:simple_auth_comparison_flutter/sign_in/pages/sign_in_page_set_state.dart';
 import 'package:simple_auth_comparison_flutter/sign_in/pages/sign_in_page_value_notifier.dart';
 import 'package:simple_auth_comparison_flutter/sign_in/pages/sign_in_page_vanilla.dart';
@@ -42,6 +43,8 @@ class SignInPageNavigation extends StatelessWidget {
         return SignInPageBloc.create(context);
       case Option.valueNotifier:
         return SignInPageValueNotifier.create(context);
+      case Option.rxdart:
+        return SignInPageRxDart.create(context);
       default:
         return Container();
     }
